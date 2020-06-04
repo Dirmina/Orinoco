@@ -68,8 +68,7 @@ if (panier) {
             && regexMail.test(document.getElementById('mail').value) 
             && regexCity.test(document.getElementById('ville').value) 
             && regexAdress.test(document.getElementById('adresse').value)) {
-                if(confirm("Veillez à ce que vos coordonnées soit bonnes ! Si c'est le cas, Appuyer sur 'Ok' sinon 'Annuler'.")) {
-                    fetch("http://localhost:3000/api/cameras/order", {
+                fetch("http://localhost:3000/api/cameras/order", {
                         method: 'post',
                         headers: {
                             "Content-type": "application/json; charset=UTF-8"
@@ -88,35 +87,34 @@ if (panier) {
                             // tableau de string products
                             products: panier
                         })
-                    })
-                    .then(function(response) { // ¨romesse de réponse 
-                        if (response.ok) {
-                            response.json() 
-                            .then(function(data) { //Promesse de JSON to JS
-                                // Suppression des anciennes informations de commandes et du panier actuel si présentes
-                                if (localStorage.getItem("orderId") &&
-                                localStorage.getItem("total") &&
-                                localStorage.getItem("item"))
-                                {     
-                                    localStorage.removeItem("orderId");
-                                    localStorage.removeItem("total");
-                                    localStorage.removeItem("item");
-                                }
+                })
+                .then(function(response) { // ¨romesse de réponse 
+                    if (response.ok) {
+                        response.json() 
+                        .then(function(data) { //Promesse de JSON to JS
+                            // Suppression des anciennes informations de commandes et du panier actuel si présentes
+                            if (localStorage.getItem("orderId") &&
+                            localStorage.getItem("total") &&
+                            localStorage.getItem("item"))
+                            {     
+                                localStorage.removeItem("orderId");
+                                localStorage.removeItem("total");
+                                localStorage.removeItem("item");
+                            }
 
-                                // Stockage des info commandes 
-                                localStorage.setItem("total", total);
-                                localStorage.setItem("orderId", data.orderId);
+                            // Stockage des info commandes 
+                            localStorage.setItem("total", total);
+                            localStorage.setItem("orderId", data.orderId);
 
-                                // Redirection sur la page de confirmation de commande
-                                document.location.href = "confirmation.html";
-                            })
-                        }
-                    })
-                }
+                            // Redirection sur la page de confirmation de commande
+                            document.location.href = "confirmation.html";
+                        })
+                    }
+                })
             }
-        }
-       
+        }  
     })
+    
     for (var id of uniqueIDs) {
 
         let quantity = 0;
