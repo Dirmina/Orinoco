@@ -1,0 +1,161 @@
+html, body
+{
+    margin: 0;
+    padding:0;
+
+    font-family: arial;
+    font-size: 2.6vw;
+}
+
+a {
+    text-decoration: none;
+    color: #c585b7;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: #e271af;
+}
+
+.header
+{
+    background-color : #f3e9f1;
+    padding-bottom: 1vw;
+    text-align: center;
+}
+
+.nav 
+{
+    display:block;
+}
+
+.nav__list
+{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+}
+
+.nav__list--items
+{
+    margin-left: 3vw;
+    margin-right: 3vw;
+}
+
+.nav__list--link
+{
+    text-decoration: none;
+    color: #000;
+}
+
+.nav__list--link:hover 
+{
+    text-decoration: underline;
+}
+
+label {
+    display: block;
+    width: 25%;
+}
+
+input {
+    display:block;
+}
+.form {
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.input {
+    margin-top: 1vw;
+    margin-bottom: 1vw;
+}
+
+.d-flex {
+    display:flex;
+}
+.d-flex-column {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.d-flex-between-align-center {
+    display:flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.d-flex-around-align-center {
+    display:flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.padding {
+    padding: 1.3vw;
+    padding-left: 6.5vw;
+}
+
+.padding_product {
+    padding-left: 1.3vw;
+}
+
+.padding_panier {
+    padding-left: 6.5vw;
+    padding-right: 6.5vw;
+}
+
+.button {
+    display:flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.button button {
+    margin: 0.7vw;
+}
+
+.border-b {
+    border-bottom: 1px #f3e9f1 solid;
+}
+
+.image {
+    width: 150px;
+    box-shadow: 3px 3px 3px #000;
+}
+
+.image_panier {
+    width: 200px;
+    box-shadow: 3px 3px 3px #000;
+}
+
+.title-price {
+    padding-left: 1.3vw;
+}
+
+#storage {
+    margin-top : 2.6vw;
+    padding: 1.3vw;
+}
+
+.description {
+    width : 50%;
+}
+
+#clearStorage, #form {
+    display:none;
+}
+
+@media (min-width: 992px) {
+    html,body {
+        font-size: 1.3vw;
+    }
+}
+
+@media (max-width: 992px; ) {
+    .image_panier {
+        width: 100px;
+    }
+}

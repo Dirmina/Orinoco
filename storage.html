@@ -1,1 +1,57 @@
-anier
+<!DOCTYPE html>
+<html lang="fr">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="stylesheet" href="./css/style.css" />
+        
+        <title>Orinoco | Panier</title>
+    </head>
+
+    <body>
+        
+        <header class="header">
+            <a href="index.html">
+                <img src="logo.png" alt="bannière Orinoco. Direction : page d'accueil" />
+            </a>
+
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li  class="nav__list--items"><a href="index.html" class="nav__list--link">Accueil</a></li>
+                </ul>
+            </nav>
+        </header>
+        
+        <section>
+
+        </section>
+
+        <p id="panierVide">Votre panier est vide !!</p>
+        <p id='Total'></p>
+        <button id='clearStorage'></button>
+
+    <section id="form">
+        <h2> Passez une commande : </h2>
+
+        <p>Pour passer une commande, remplissez le formulaire suivant :</p>
+    <form method='post' class="form">
+        <label for="nom">Nom : <small id="aideNom"></small><input type="text" id="nom" class="input" placeholder="Dupont" required/> </label>
+        <label for="prenom">Prénom : <small id="aidePrenom"></small><input type="text" id="prenom" name="prenom" class="input" placeholder="Jean" required/></label>
+        <label for="adresse">Adresse : <small id="aideAdresse"></small><input type="text" id="adresse" class="input" placeholder="01 rue du Colibri" required/></label>
+        <label for="ville">Ville : <small id="aideVille"></small><input type="text" id="ville" class="input" placeholder="Paris" required></label>
+        <label for="mail">E-mail : <small id="aideMail"></small><input type="email" id="mail" name="mail" class="input" placeholder="jean@zanadoo.fr" required></label> 
+        <label><input type="submit" class="input" id="submitButton"></label>
+    </form>
+    </section>
+        <footer>
+
+        </footer>
+
+        <script src="./js/Regex.js"></script>
+        <script src="./js/panier.js"></script>
+    </body>
+
+    
+
+</html>

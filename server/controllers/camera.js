@@ -13,6 +13,7 @@ exports.getAllCameras = (req, res, next) => {
   ).catch(
     () => {
       res.status(500).send(new Error('Database error!'));
+
     }
   );
 };
