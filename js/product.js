@@ -4,16 +4,16 @@ function articlePersonnalise(camera) {
 
     const section = document.querySelector("section");
     const article = document.createElement('article');
-    article.className = 'd-flex-around-align-center padding padding_product border-b';
+    article.className = 'd-flex-between-align-center d-flex-between-responsive-product padding padding_product border-b';
 
     //création de l'article 'camera' :
-    article.innerHTML ="<div class='d-flex'><img/><div><h2></h2><p class='price'></p><form method='get'><label for='lenses'><select class='lenses'></select></label></form><button id='storage'>Ajouter au panier</button></div></div><p class='description'></p>";
+    article.innerHTML ="<img/><div class='w-50'><h2></h2><p class='price'></p><button id='storage' class='button_product'>Ajouter au panier</button><p class='description'></p><form method='get'><label for='lenses'>Lentilles:</label><select class='lenses'></select></form></div>";
     section.appendChild(article);
 
     const image = article.querySelector("img");
     image.src = camera.imageUrl;
     image.alt = camera.name;
-    image.className = 'image';
+    image.className = 'image_product';
     
     const groupTitlePrice = article.querySelector('div');
     groupTitlePrice.className = 'title-price';

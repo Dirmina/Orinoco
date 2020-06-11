@@ -12,6 +12,18 @@ a {
     color: #c585b7;
 }
 
+strong {
+    color: red;
+}
+
+.mandatory {
+    font-size: 0.9vw;
+}
+
+.invalide {
+    color: red;
+}
+
 a:hover {
     text-decoration: underline;
     color: #e271af;
@@ -53,6 +65,7 @@ a:hover {
     text-decoration: underline;
 }
 
+
 label {
     display: block;
     width: 25%;
@@ -61,16 +74,37 @@ label {
 input {
     display:block;
 }
+
 .form {
     display:flex;
     flex-direction: column;
     align-items: center;
+    background: #f5e4d6;
+
+    width: 100%;
 }
 
 
 .input {
     margin-top: 1vw;
     margin-bottom: 1vw;
+}
+
+#submitButton, .button_product {
+    
+    background-color: #cc32ab;
+    color:white;
+    font-size: 1vw;
+    font-weight: bold;
+    text-transform: capitalize;
+     border-radius: 50px 50px;
+    border: 3px #cc32ab outset;
+
+    width: 35%;
+    padding: 0.5vw;
+}
+#submitButton:active {
+    border: 3px #cc32ab inset;
 }
 
 .d-flex {
@@ -80,6 +114,13 @@ input {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
+}
+
+.d-flex-column-center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 25%;
 }
 
 .d-flex-between-align-center {
@@ -92,10 +133,14 @@ input {
     display:flex;
     justify-content: space-around;
     align-items: center;
+    flex-wrap: wrap;
 }
 .padding {
     padding: 1.3vw;
     padding-left: 6.5vw;
+}
+.padding-l {
+    padding-left: 1.3vw;
 }
 
 .padding_product {
@@ -120,10 +165,18 @@ input {
 .border-b {
     border-bottom: 1px #f3e9f1 solid;
 }
+.border-l {
+    border-left: 1px #f3e9f1 solid;
+}
 
 .image {
-    width: 150px;
+    width: 15%;
     box-shadow: 3px 3px 3px #000;
+}
+
+.image_product {
+    display:block;
+    width: 50%;
 }
 
 .image_panier {
@@ -140,12 +193,85 @@ input {
     padding: 1.3vw;
 }
 
-.description {
-    width : 50%;
+#panierVide {
+    width: 100%;
+    text-align: center;
+    font-style: italic;
 }
 
+.w-25 {
+    width: 25%;
+}
+
+.w-50 {
+    width: 50%;
+}
+
+.w-75 {
+    width: 75%;
+}
+
+
 #clearStorage, #form {
-    display:none;
+    visibility: hidden;
+}
+
+#panierVide {
+    visibility: visible;
+}
+
+#clearStorage {
+
+    float: right;
+
+    background: none;
+    border:none;
+    color: #555353;
+    font-size: 0.7em;
+}
+
+#clearStorage:hover {
+    color: #000;
+    text-decoration: underline;
+}
+.clearStorage {
+    width: 95%;
+}
+#Total{
+    width: 95%;
+    text-align: right;
+    margin-right: 6.5vw;
+}
+
+
+.fa-trash-alt {
+    color: #b874aa;
+}
+.fa-trash-alt:active {
+    color: #b476a8;
+    background-color: #e7cbe2;
+}
+
+.minus-one {
+    font-weight: bold;
+    color: #b874aa;
+}
+.minus-one:hover, .fa-trash-alt:hover {
+    cursor: pointer;
+    background-color: #f3e9f1;
+}
+.minus-one:active {
+    color: #b476a8;
+    padding: 1.3vw;
+    border-radius: 100% 100%;
+    background-color: #e7cbe2;
+}
+
+.border-button {
+    padding: 1.3vw;
+    margin: 1.3vw;
+    border-radius: 100% 100%;
+    border: 1px #b476a8 dashed;
 }
 
 @media (min-width: 992px) {
@@ -154,8 +280,33 @@ input {
     }
 }
 
-@media (max-width: 992px; ) {
+@media (max-width: 992px) {
     .image_panier {
         width: 100px;
+    }
+}
+
+@media (max-width: 991px) and (orientation: portrait) {
+    html,body {
+        font-size: 3.9vw;
+    }
+    .padding {
+        padding-left: 2.6vw;
+    }
+    .title-price {
+       margin-left: 2.6vw;
+       margin-right:2.6vw;
+    }
+
+    #submitButton {
+        width: 100%;
+    }
+
+    .button_product {
+        width: 50%;
+    }
+
+    .d-flex-between-responsive-product {
+        align-items: flex-start;
     }
 }

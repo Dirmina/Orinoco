@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
+        <script src="https://kit.fontawesome.com/da1309c327.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="./css/style.css" />
         
         <title>Orinoco | Panier</title>
@@ -29,19 +29,20 @@
 
         <p id="panierVide">Votre panier est vide !!</p>
         <p id='Total'></p>
-        <button id='clearStorage'></button>
+        <div class="clearStorage"><button id='clearStorage'></button></div>
 
     <section id="form">
         <h2> Passez une commande : </h2>
 
         <p>Pour passer une commande, remplissez le formulaire suivant :</p>
+        <p class="mandatory">Les champs munies d'une étoile <strong>*</strong> sont obligatoires !</p>
     <form method='post' class="form">
-        <label for="nom">Nom : <small id="aideNom"></small><input type="text" id="nom" class="input" placeholder="Dupont" required/> </label>
-        <label for="prenom">Prénom : <small id="aidePrenom"></small><input type="text" id="prenom" name="prenom" class="input" placeholder="Jean" required/></label>
-        <label for="adresse">Adresse : <small id="aideAdresse"></small><input type="text" id="adresse" class="input" placeholder="01 rue du Colibri" required/></label>
-        <label for="ville">Ville : <small id="aideVille"></small><input type="text" id="ville" class="input" placeholder="Paris" required></label>
-        <label for="mail">E-mail : <small id="aideMail"></small><input type="email" id="mail" name="mail" class="input" placeholder="jean@zanadoo.fr" required></label> 
-        <label><input type="submit" class="input" id="submitButton"></label>
+        <label for="nom">Nom<strong>*</strong> : <small id="aideNom" class="invalide"></small><input type="text" id="nom" class="input" placeholder="Dupont" required/> </label>
+        <label for="prenom">Prénom<strong>*</strong> : <small id="aidePrenom" class="invalide"></small><input type="text" id="prenom" name="prenom" class="input" placeholder="Jean" required/></label>
+        <label for="adresse">Adresse<strong>*</strong> : <small id="aideAdresse" class="invalide"></small><input type="text" id="adresse" class="input" placeholder="01 rue du Colibri" required/></label>
+        <label for="ville">Ville<strong>*</strong> : <small id="aideVille" class="invalide"></small><input type="text" id="ville" class="input" placeholder="Paris" required></label>
+        <label for="mail">E-mail<strong>*</strong> : <small id="aideMail" class="invalide"></small><input type="email" id="mail" name="mail" class="input" placeholder="jean@zanadoo.fr" required></label> 
+        <label><input type="submit" class="input" id="submitButton" value="VALIDER"></label>
     </form>
     </section>
         <footer>

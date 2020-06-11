@@ -29,11 +29,11 @@ function generationArticle(cameras) {
 
         const image = article.querySelector("img");
         image.src = camera.imageUrl;
-        image.alt = camera.name;  
+        image.alt = camera.name;
         image.className = 'image';
 
         const groupTitlePrice = article.querySelector('div');
-        groupTitlePrice.className = 'title-price';
+        groupTitlePrice.className = 'title-price w-25';
 
         const titre = article.querySelector("h2");
         titre.textContent = camera.name;
