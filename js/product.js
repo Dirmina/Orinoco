@@ -1,53 +1,51 @@
-//Fonctions :
+//Fonction :
+function generateProduct(camera) {
 
-function articlePersonnalise(camera) {
-
+    //Création de la balise article :
     const section = document.querySelector("section");
     const article = document.createElement('article');
     article.className = 'd-flex-between-align-center d-flex-between-responsive-product padding padding_product border-b';
 
     //création de l'article 'camera' :
-    article.innerHTML ="<img/><div class='w-50'><h2></h2><p class='price'></p><button id='storage' class='button_product'>Ajouter au panier</button><p class='description'></p><form method='get'><label for='lenses'>Lentilles:</label><select class='lenses'></select></form></div>";
+    article.innerHTML ="<img/><div><h2></h2><p class='price'></p><button id='storage' class='button_product'>Ajouter au panier</button><p class='description'></p><form method='get'><label for='lenses'>Lentilles:</label><select class='lenses'></select></form></div>";
     section.appendChild(article);
 
+    //Traitement de l'image :
     const image = article.querySelector("img");
     image.src = camera.imageUrl;
     image.alt = camera.name;
     image.className = 'image_product';
     
-    const groupTitlePrice = article.querySelector('div');
-    groupTitlePrice.className = 'title-price';
+    //Traitement div all-without-image :
+    const allWithoutImage = article.querySelector('div');
+    allWithoutImage.className = 'all-without-image w-50';
 
-    const titre = article.querySelector("h2");
-    titre.textContent = camera.name;
+    //Titre :
+    const title = article.querySelector("h2");
+    title.textContent = camera.name;
 
+    //Description :
     const description = document.querySelector('.description');
     description.textContent = camera.description;
 
+    //Prix :
     const price = article.querySelector(".price");
     price.textContent = camera.price.toLocaleString() + " $";
 
-    const personalize = article.querySelector('select');
+    //Menu déroulant des lentilles :
+    const personalizeLenses = article.querySelector('select');
     for (i=0; i < camera.lenses.length; i++) {
-         personalize.innerHTML += "<option>" + camera.lenses[i] + "</option>" ;
+         personalizeLenses.innerHTML += "<option>" + camera.lenses[i] + "</option>" ;
     }
 
-    const panierButton = document.querySelector('button');      
+    const basketButton = document.querySelector('button');      
     //le panier contient le localStorage sous forme d'objet JS
-    var panier = JSON.parse(window.localStorage.getItem('item')) || [];
-    console.log(panier);
+    var basket = JSON.parse(window.localStorage.getItem('item')) || [];
 
-
-    panierButton.addEventListener('click', function() {
-            alert(" Article ajouté au panier !");
-            if (!panier) {
-               panier = localStorage.setItem('item', [JSON.stringify(id)]);
-            }
-            else {
-                panier.push(id);
-                localStorage.setItem('item', [JSON.stringify(panier)]);
-                console.log(localStorage.getItem('item'));
-            }
+    basketButton.addEventListener('click', function() {
+        alert(" Article ajouté au panier !");
+            basket.push(id);
+            localStorage.setItem('item', [JSON.stringify(basket)]);
     })
 }
 
@@ -64,7 +62,10 @@ function articlePersonnalise(camera) {
         if (response.ok) {
             response.json()
             .then(function (camera) { //promesse de json parsed
-                articlePersonnalise(camera);
+                generateProduct(camera);
             })
-            }
-        })
+        }
+    })
+    .catch(function() {
+        alert("Le serveur ne répond pas ! Nos équipes travaillent au bon rétablissement des services ! Merci de votre patience.")
+    });

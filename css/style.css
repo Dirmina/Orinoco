@@ -147,7 +147,7 @@ input {
     padding-left: 1.3vw;
 }
 
-.padding_panier {
+.padding_basket {
     padding-left: 6.5vw;
     padding-right: 6.5vw;
 }
@@ -179,26 +179,30 @@ input {
     width: 50%;
 }
 
-.image_panier {
+.image_basket {
     width: 200px;
     box-shadow: 3px 3px 3px #000;
 }
 
-.title-price {
+.title-price, .all-without-image  {
     padding-left: 1.3vw;
 }
 
 #storage {
     margin-top : 2.6vw;
     padding: 1.3vw;
+    font-size: 1.5vw;
 }
 
-#panierVide {
+#emptyBasket {
     width: 100%;
     text-align: center;
     font-style: italic;
 }
 
+.button_basket{
+    width: 1.3vw;
+}
 .w-25 {
     width: 25%;
 }
@@ -216,14 +220,16 @@ input {
     visibility: hidden;
 }
 
-#panierVide {
+#form {
+    padding: 0 1.3vw;
+}
+
+#emptyBasket {
     visibility: visible;
 }
 
 #clearStorage {
-
     float: right;
-
     background: none;
     border:none;
     color: #555353;
@@ -281,7 +287,13 @@ input {
 }
 
 @media (max-width: 992px) {
-    .image_panier {
+    .button {
+        align-items: center;
+    }
+    .button_basket {
+        width: 3.9vw;
+    }
+    .image_basket {
         width: 100px;
     }
 }
@@ -293,7 +305,7 @@ input {
     .padding {
         padding-left: 2.6vw;
     }
-    .title-price {
+    .title-price, .all-without-image {
        margin-left: 2.6vw;
        margin-right:2.6vw;
     }

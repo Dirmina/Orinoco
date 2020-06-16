@@ -27,22 +27,27 @@ function generationArticle(cameras) {
         article.innerHTML ="<img/><div><a href=" + newUrl +"><h2></h2></a><p></p></div><p id='description" + camera._id + "'></p>";
         section.appendChild(article);
 
+        //Traitement image :
         const image = article.querySelector("img");
         image.src = camera.imageUrl;
         image.alt = camera.name;
         image.className = 'image';
 
+        //traitement div title-price :
         const groupTitlePrice = article.querySelector('div');
         groupTitlePrice.className = 'title-price w-25';
 
-        const titre = article.querySelector("h2");
-        titre.textContent = camera.name;
+        //Titre :
+        const title = article.querySelector("h2");
+        title.textContent = camera.name;
 
+        //Prix :
         const price = article.querySelector("p");
         price.textContent = camera.price.toLocaleString() + " $";
 
+        //Description :
         const description = document.getElementById(`description${camera._id}`);
-        description.className = "description";
+        description.className = "description w-50";
         description.textContent = camera.description;
     }
 }
@@ -54,7 +59,7 @@ fetch("http://localhost:3000/api/cameras/")
 .then(function(response) { //promesse de réponse serveur
     if (response.ok) {
         response.json()
-        .then(function(cameras) { //promesse de conversion JSON
+        .then(function(cameras) { //promesse de conversion
              generationArticle(cameras);
         });
     }
